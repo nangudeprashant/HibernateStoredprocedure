@@ -24,7 +24,7 @@ public class AppMain {
 		// Fetching the data from the database using stored procedure queries.
 
 		// Stored procedure query #1
-		System.out.println(":::: Find all employees ::::");
+		System.out.println("==================== Find all employees ===============");
 
 		StoredProcedureQuery allemployees = s.createStoredProcedureQuery("findAllEmployees", Employee.class);
 
@@ -35,7 +35,7 @@ public class AppMain {
 		}
 
 		// Stored procedure query #2
-		System.out.println("\n:::: Find employees department wise ::::");
+		System.out.println("\n=============== Find employees department wise =================");
 
 		StoredProcedureQuery department = s.createStoredProcedureQuery("findEmployeeByDepartment", Employee.class);
 		department.registerStoredProcedureParameter("emp_department", String.class, ParameterMode.IN);
@@ -50,7 +50,7 @@ public class AppMain {
 		}
 
 		// Stored procedure query #3
-		System.out.println("\n:::: Find employee count by designation ::::");
+		System.out.println("\n========== Find employee count by designation ==============");
 
 		StoredProcedureQuery count = s.createStoredProcedureQuery("findEmployeeCountByDesignation");
 		count.registerStoredProcedureParameter("emp_designation", String.class, ParameterMode.IN);
